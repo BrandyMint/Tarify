@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ssh wwwtarify22@staging.tarify21.ru -p 231

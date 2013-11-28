@@ -1,9 +1,9 @@
-set :application, 'HOSTNAME'
-set :repo_url, 'REPO' #git@github.com:BrandyMint/zagorod.git'
+set :application, 'tarify21.ru'
+set :repo_url, 'git@github.com:BrandyMint/Tarify.git'
 
 #ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, ->{"/home/USERNAME/#{fetch(:application)}"}
+set :deploy_to, ->{"/home/wwwtarify21/#{fetch(:application)}"}
 set :scm, :git
 
 # set :format, :pretty

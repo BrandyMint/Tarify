@@ -2,10 +2,10 @@ defaults: &defaults
   app:
     title: Тарифы
 
-    asset_host: http://tarify.icfdev.ru/
+    asset_host: http://tarify21.ru/
 
     default_url_options: &default_url_options
-      host: HOSTNAME
+      host: tarify21.ru
       port: 80
 
   action_mailer: &action_mailer
@@ -14,8 +14,8 @@ defaults: &defaults
       <<: *default_url_options
 
   mailer_defaults: &mailer_defaults
-    from: 'noreply@HOSTNAME'
-    host: HOSTNAME
+    from: 'noreply@tarify21.ru'
+    host: tarify21.ru
 
 development:
   <<: *defaults
@@ -41,7 +41,7 @@ production:
   mailer_defaults:
     <<: *mailer_defaults
 
-stage:
+staging:
   <<: *defaults
   mailer_defaults:
     <<: *mailer_defaults

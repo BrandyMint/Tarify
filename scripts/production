@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ssh USERNAME@HOSTNAME -p PORTNUM
+exec ssh wwwtarify21@tarify21.ru -p 231
