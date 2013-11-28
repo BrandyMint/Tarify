@@ -43,7 +43,7 @@ gem 'semver2'
 gem 'recipient_interceptor'
 
 #gem 'mini_magick'
-#gem 'carrierwave'
+gem 'carrierwave'
 
 # Контроллеры
 #gem 'has_scope'

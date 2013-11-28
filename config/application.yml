@@ -1,8 +1,8 @@
 defaults: &defaults
   app:
-    title: Rails4Template
+    title: Тарифы
 
-    asset_host: http://Rails4Template.icfdev.ru/
+    asset_host: http://tarify.icfdev.ru/
 
     default_url_options: &default_url_options
       host: HOSTNAME

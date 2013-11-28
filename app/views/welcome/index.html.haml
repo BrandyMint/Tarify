@@ -1,2 +1,22 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+%h1 Тарифы
+
+%table.table.table-condensed
+  %thead
+    %tr
+      %th Банк
+      %th Тариф
+      %th Месячное обслуживание
+      %th Стоимость платежного поручения
+      %th Процент за снятие на хознужды
+      %th Краткое описание особых условий
+      %th pdf
+  %tbody
+    - @tariffes.each do |t|
+      %tr
+        %td= t.bank.title
+        %td= t.title
+        %td= t.month_fee
+        %td= t.invoice_fee
+        %td= t.cashing_fee
+        %td= t.summary
+        %td= link_to 'pdf', t.pdf.file.url
