@@ -1,4 +1,4 @@
-ActiveAdmin.register Tariff do
+ActiveAdmin.register Tariffe do
 
   
   # See permitted parameters documentation:

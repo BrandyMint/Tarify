@@ -1,6 +1,6 @@
 class CreateTariffs < ActiveRecord::Migration
   def change
-    create_table :tariffs do |t|
+    create_table :tariffes do |t|
       t.boolean :active, default: true, null: false
       t.references :bank, index: true
       t.integer :position, null: false, default: 0

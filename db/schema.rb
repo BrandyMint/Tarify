@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20131128085350) do
     t.datetime "updated_at"
   end
 
-  create_table "tariffs", force: true do |t|
+  create_table "tariffes", force: true do |t|
     t.boolean  "active",       default: true, null: false
     t.integer  "bank_id"
     t.integer  "position",     default: 0,    null: false
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 20131128085350) do
     t.datetime "updated_at"
   end
 
-  add_index "tariffs", ["bank_id"], name: "index_tariffs_on_bank_id", using: :btree
+  add_index "tariffes", ["bank_id"], name: "index_tariffes_on_bank_id", using: :btree
 
 end

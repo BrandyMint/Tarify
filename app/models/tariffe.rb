@@ -1,4 +1,4 @@
-class Tariff < ActiveRecord::Base
+class Tariffe < ActiveRecord::Base
   scope :ordered, -> { order :position }
   scope :active, -> { where active: true }
 
