@@ -13,8 +13,7 @@ defaults: &defaults
     default_url_options:
       <<: *default_url_options
 
-  mailer_defaults:
-    <<: *action_mailer
+  mailer_defaults: &mailer_defaults
     from: 'noreply@HOSTNAME'
     host: HOSTNAME
 
@@ -39,6 +38,10 @@ test:
 
 production:
   <<: *defaults
+  mailer_defaults:
+    <<: *mailer_defaults
 
 stage:
   <<: *defaults
+  mailer_defaults:
+    <<: *mailer_defaults

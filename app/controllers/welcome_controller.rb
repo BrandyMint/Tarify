@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @tariffes = Tariff.active.ordered
+    @tariffes = Tariffe.active.ordered
   end
 end
