@@ -9,10 +9,6 @@ pid  APP_ROOT + "/tmp/pids/unicorn.pid"
 stderr_path APP_ROOT + "/log/unicorn.stderr.log"
 stdout_path APP_ROOT + "/log/unicorn.stdout.log"
 
-if rails_env=='production'
-    worker_processes 10
-end
-
 # Helps ensure the correct unicorn binary is used when upgrading with USR2
 # # See http://unicorn.bogomips.org/Sandbox.html
 Unicorn::HttpServer::START_CTX[0] = APP_ROOT + "/bin/unicorn"
@@ -35,20 +31,6 @@ end
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) and
     ActiveRecord::Base.connection.disconnect!
-
-  # Incremental kill-off
-  old_pid = "#{server.config[:pid]}.oldbin"
-  if old_pid != server.pid
-    begin
-      sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
-      puts "Sending #{sig} signal to old unicorn master..."
-      Process.kill(sig, File.read(old_pid).to_i)
-    rescue Errno::ENOENT, Errno::ESRCH
-    end
-  end
-
-  # Throttle the master from forking too quickly (for incremental kill-off only)
-  sleep 1
 end
 
 after_fork do |server, worker|
