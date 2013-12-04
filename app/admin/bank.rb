@@ -13,5 +13,7 @@ ActiveAdmin.register Bank do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+  #
+  permit_params *Bank.attribute_names
   
 end

@@ -13,5 +13,6 @@ ActiveAdmin.register Tariffe do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+  permit_params *Tariffe.attribute_names
   
 end
