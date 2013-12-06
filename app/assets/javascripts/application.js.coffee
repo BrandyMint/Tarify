@@ -16,6 +16,7 @@
 # require jquery.ui.all
 
 $ ->
+  $('.tooltip').tooltip()
   # $('#freetile').freetile()
   # $('input.ui-date-picker').datepicker()
   # $('input.ui-datetime-picker').datetimepicker()

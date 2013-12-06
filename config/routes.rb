@@ -1,8 +1,11 @@
 Tarify::Application.routes.draw do
+  get "tariffes/show"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   root 'welcome#index'
+
+  resources :tariffes, only: [:show]
 
 
   # Example of regular route:

@@ -12,11 +12,11 @@
       %th pdf
   %tbody
     - @tariffes.each do |t|
+      - t = TariffeDecorator.new t
       %tr
+        %td= link_to t.title, tariffe_url(t)
         %td= t.bank.title
-        %td= t.title
         %td= t.month_fee
         %td= t.invoice_fee
         %td= t.cashing_fee
-        %td= t.summary
-        %td= link_to 'pdf', t.pdf.file.url
+        %td= t.pdf_link

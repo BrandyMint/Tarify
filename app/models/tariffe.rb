@@ -4,7 +4,11 @@ class Tariffe < ActiveRecord::Base
 
   belongs_to :bank
 
-  #mount_uploader :pdf, AttachUploader
+  mount_uploader :pdf, AttachUploader
 
   validates :title, presence: true, uniqueness: { scope: :bank_id }
+
+  def to_s
+    title
+  end
 end

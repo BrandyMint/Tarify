@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def money value
+    number_to_currency value, precision: 0
+  end
+
   def icon *classes
     css = classes.map{|c| "icon-#{c}"}.join(' ')
     content_tag :i, '', :class => "icon #{css}"
