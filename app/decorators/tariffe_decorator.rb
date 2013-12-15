@@ -2,7 +2,7 @@ class TariffeDecorator < Draper::Decorator
   delegate_all
 
   def pdf_link
-    h.link_to 'pdf', source.pdf.file.url if source.pdf.present?
+    h.link_to 'pdf', source.pdf.url if source.pdf.present?
   end
 
   def summary
