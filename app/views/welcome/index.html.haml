@@ -3,19 +3,18 @@
 %table.table.table-condensed
   %thead
     %tr
-      %th Банк
       %th Тариф
+      %th Банк
       %th Месячное обслуживание
       %th Стоимость платежного поручения
       %th Процент за снятие на хознужды
-      %th Краткое описание особых условий
       %th pdf
   %tbody
     - @tariffes.each do |t|
       - t = TariffeDecorator.new t
       %tr
-        %td= link_to t.title, tariffe_url(t)
         %td= t.bank.title
+        %td= link_to t.title, tariffe_url(t)
         %td= t.month_fee
         %td= t.invoice_fee
         %td= t.cashing_fee
