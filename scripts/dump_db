@@ -1,0 +1,1 @@
+pg_dump -a -Tadmin_users tarify_development > tarify.sql

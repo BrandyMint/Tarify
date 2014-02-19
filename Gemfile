@@ -11,8 +11,6 @@ gem 'pg_array_parser'
 
 gem 'settingslogic'
 
-gem 'seed_dump'
-
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Авторизация и аутентификация
