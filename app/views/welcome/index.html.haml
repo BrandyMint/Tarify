@@ -7,8 +7,9 @@
     = f.input :household_fee
 
     = f.submit 'Расчитать'
-    %span или
-    = link_to 'Сбросить', root_path
+    - if @calculator.filled?
+      %span или
+      = link_to 'Сбросить', root_path
 
 %table.table.table-condensed
   %thead
