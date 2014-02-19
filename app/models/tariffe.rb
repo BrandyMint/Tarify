@@ -1,6 +1,8 @@
 class Tariffe < ActiveRecord::Base
+  include Concerns::Calculations
+
   scope :ordered, -> { order :position }
-  scope :active, -> { where active: true }
+  scope :active,  -> { where active: true }
 
   belongs_to :bank
 
