@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# Use unicorn as the app server
-gem 'unicorn'
-
 gem 'rails', '4.0.0'
 #gem 'rails',     github: 'rails/rails'
 #gem 'arel',      github: 'rails/arel'
@@ -13,6 +10,8 @@ gem 'pg'
 gem 'pg_array_parser'
 
 gem 'settingslogic'
+
+gem 'seed_dump'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
@@ -161,7 +160,6 @@ group :development do
 
   gem 'pry-remote'
 
-  gem 'factory_girl_rails'
   gem 'rspec-console'
 
   # Start a pry session whenever something goes wrong.
@@ -191,11 +189,7 @@ group :development do
   # Молчаливые ассеты
   gem 'quiet_assets'
 
-  gem "rspec-rails", ">= 2.11.0"
   gem "guard-livereload"
-  gem 'rb-inotify', '~> 0.9', :require => false
-  gem 'rb-fsevent', '~> 0.9.1', require: false
-  gem 'ruby_gntp'
 
   # Пока не нужны
   #gem 'ruby-graphviz'
@@ -203,13 +197,18 @@ group :development do
   gem 'foreman'
 end
 
-group :test do
+group :test, :development do
   gem 'factory_girl_rails'
-  gem 'rspec-prof'
   gem 'rb-inotify', '~> 0.9', :require => false
+  gem 'rb-fsevent', '~> 0.9.1', require: false
+  gem 'ruby_gntp'
+  gem "rspec-rails", ">= 2.11.0"
+end
+
+group :test do
+  gem 'rspec-prof'
   # Start Pry in the context of a failed test
   #gem 'plymouth'
-  gem "rspec-rails", ">= 2.11.0"
   gem "fakeredis", :require => "fakeredis/rspec"
   gem 'resque_spec'
   gem "email_spec", ">= 1.2.1"
