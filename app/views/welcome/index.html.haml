@@ -10,7 +10,7 @@
       %th Тариф
       %th.text-right Месячное обслуживание
       %th.text-right Стоимость платежного поручения
-      %th.text-right Процент за снятие на хознужды      
+      %th.text-right Процент за снятие на хознужды
       %th.text-right
         = total_heading(@calculator)
       //%th.text-right PDF
@@ -18,9 +18,8 @@
   %tbody
     - @tariffes.each do |t|
       - t = TariffeDecorator.new t
-      %tr
+      %tr{role: 'clickable', data: { url: tariffe_url(t)}}
         %td= t.bank.title
-        //%td= link_to t.title, tariffe_url(t)
         %td= t.title
         %td.text-right= t.month_fee
         %td.text-right= t.invoice_fee

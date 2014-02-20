@@ -1,6 +1,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery.turbolinks
+#= require jquery.role
 #= require turbolinks
 #= require bootstrap
 #= require_tree .
@@ -23,5 +24,8 @@ $ ->
   # $('input.select2').select2()
   # $('select.select2').select2
   #  width: 'element'
+  #
+  $(document).on 'click', "@clickable", (e)->
+    window.location = $(e.currentTarget).data 'url'
 
   return

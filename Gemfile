@@ -32,6 +32,7 @@ gem 'hashie'
 
 # Управление версиями проекта
 gem 'semver2'
+gem 'role-rails'
 
 # Авторизация
 # gem 'switch_user'
