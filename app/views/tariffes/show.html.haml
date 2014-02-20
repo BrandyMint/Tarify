@@ -1,4 +1,77 @@
 .page-header
   %h1= @tariffe.title
+  %small.pull-right
+    %a(href="/") 
+      %i.fa.fa-chevron-left
+      Вернутся к списку тарифов
   %small= @tariffe.bank
-= simple_format @tariffe.description
+.row.mb30
+  .col-md-8.mt20	
+    = simple_format @tariffe.description
+    .mt30
+      %a.size-18.lite(href="#")
+        Скачать PDF
+        %i.fa.fa-download    
+  .col-md-4
+    %h4 Заявка на обслуживание тарифа
+    %form
+      .form-group
+        %input.form-control{:placeholder => "Ф.И.О."}
+      .form-group
+        %input.form-control{:placeholder => "Контактный телефон"}
+      .form-group
+        %input.form-control{:placeholder => "E-mail"}
+      .form-group
+        %button.btn.btn-success
+          Оформить заявку
+
+.mb50.text-center
+  %h4 
+    Расчет ежемесячной суммы расходов по тарифу 
+    = @tariffe.title
+  %form.form-inline
+    .form-group
+      %input.form-control{:placeholder => "Количество платежек"}
+    .form-group
+      %input.form-control{:placeholder => "Сумма на хоз. нужды"}
+    .form-group
+      %button.btn.btn-success
+        Расчитать	
+
+
+
+
+%h4 Другие тарифы банка
+%table.table.table-condensed.tarif-table
+  %thead
+    %tr
+      %th 
+        Тариф
+        %i.fa.fa-angle-down         
+      %th.text-right Месячное обслуживание
+      %th.text-right Стоимость платежного поручения
+      %th.text-right Процент за снятие на хознужды      
+
+  %tbody
+    %tr
+      %td Название тарифа1
+      %td.text-right 100 руб.
+      %td.text-right 100 руб.
+      %td.text-right 100 руб.
+    %tr
+      %td Название тарифа2  
+      %td.text-right 200 руб.
+      %td.text-right 200 руб.
+      %td.text-right 200 руб.
+    %tr
+      %td Название тарифа3  
+      %td.text-right 300 руб.
+      %td.text-right 300 руб.
+      %td.text-right 300 руб.
+    %tr
+      %td Название тарифа4    
+      %td.text-right 400 руб.
+      %td.text-right 400 руб.
+      %td.text-right 400 руб.               
+      
+

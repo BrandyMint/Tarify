@@ -1,36 +1,62 @@
-%h1 Тарифы
+.row.mb30
+  .col-md-8
+    .mt30
+      //%h3 Расчет ежемесячной суммы расходов
+      //= simple_form_for @calculator, url: root_path, method: :get do |f|
+      //  = f.input :amount_of_invoices
+      //  = f.input :household_fee
+      //
+      //  = f.submit 'Расчитать'
+      //  - if @calculator.filled?
+      //    %span или
+      //    = link_to 'Сбросить', root_path
+      
+      %h4 Расчет ежемесячной суммы расходов
+      %form.form-inline
+        .form-group
+          %input.form-control{:placeholder => "Количество платежек"}
+        .form-group
+          %input.form-control{:placeholder => "Сумма на хоз. нужды"}
+        .form-group
+          %button.btn.btn-success
+            Расчитать
 
-%div.well
-  %h3 Расчет ежемесячной суммы расходов
-  = simple_form_for @calculator, url: root_path, method: :get do |f|
-    = f.input :amount_of_invoices
-    = f.input :household_fee
+  .col-md-4.text-right
+    %h1 
+      %i.size-26.fa.fa-briefcase 
+      Тарифы
+    %p.small.small-line на банковское обслуживание
+    %p.small-line 
+      в 
+      %strong Чебоксарах
 
-    = f.submit 'Расчитать'
-    - if @calculator.filled?
-      %span или
-      = link_to 'Сбросить', root_path
 
-%table.table.table-condensed
+%table.table.table-condensed.tarif-table
   %thead
     %tr
+      %th 
+        Банк
+        %i.fa.fa-angle-down 
+        //%i.fa.fa-angle-up - стрелка вверх
       %th Тариф
-      %th Банк
-      %th Месячное обслуживание
-      %th Стоимость платежного поручения
-      %th Процент за снятие на хознужды
-      %th pdf
-      %th
+      %th.text-right Месячное обслуживание
+      %th.text-right Стоимость платежного поручения
+      %th.text-right Процент за снятие на хознужды      
+      %th.text-right
         = total_heading(@calculator)
+      //%th.text-right PDF
 
   %tbody
     - @tariffes.each do |t|
       - t = TariffeDecorator.new t
       %tr
         %td= t.bank.title
-        %td= link_to t.title, tariffe_url(t)
-        %td= t.month_fee
-        %td= t.invoice_fee
-        %td= t.cashing_fee
-        %td= t.pdf_link
-        %td= t.total
+        //%td= link_to t.title, tariffe_url(t)
+        %td= t.title
+        %td.text-right= t.month_fee
+        %td.text-right= t.invoice_fee
+        %td.text-right= t.cashing_fee        
+        %td.text-right.bold= t.total
+        //%td.text-right= t.pdf_link
+        //%td.text-right
+        //  %i.fa.fa-download
