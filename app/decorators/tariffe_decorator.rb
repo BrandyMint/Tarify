@@ -18,7 +18,7 @@ class TariffeDecorator < Draper::Decorator
   end
 
   def cashing_fee
-    h.money source.cashing_fee
+    h.fee source.cashing_fee
   end
 
   def total

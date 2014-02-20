@@ -1,4 +1,18 @@
 module ApplicationHelper
+  def app_version
+    content_tag :small, :class => 'text-muted', :data => { :version => Tarify.version.to_s } do
+      link_to 'v' + Tarify.version.format( "%M.%m.%p" ), 'http://github.com/brandymint/tarify'
+    end
+  end
+
+  def fee value
+    return '&middot;'.html_safe unless value
+    value = 1.2
+    precision = 2
+    precision = 0 if value==value.to_i
+    number_to_percentage value, precision: precision
+  end
+
   def money value
     number_to_currency value, precision: 0
   end
