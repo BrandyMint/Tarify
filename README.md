@@ -1,3 +1,10 @@
+Тарифы на банковское обслуживание
+---------------------------------
+
+![travis build state](https://api.travis-ci.org/BrandyMint/Tarify.png)
+
+
+
 ```
 gem install
 rake db:create db:migrate
