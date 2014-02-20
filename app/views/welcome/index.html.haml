@@ -1,6 +1,15 @@
-%h1 Тарифы
+.row.mb20
+  .col-md-6
+    .mt40
+      %input.form-control{:type => "text"}
+  .col-md-6.text-right
+    %h1 Тарифы
+    %p.small.small-line на банковское обслуживание
+    %p.small.small-line 
+      в 
+      %strong Чебоксарах
 
-%table.table.table-condensed
+%table.table.table-condensed.table-striped.tarif-table
   %thead
     %tr
       %th Тариф

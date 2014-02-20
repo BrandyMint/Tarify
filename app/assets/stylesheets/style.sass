@@ -1,0 +1,30 @@
+@each $i in 10, 20, 30, 40, 50
+  .mb#{$i}
+    margin-bottom: #{$i}px
+  .mt#{$i}
+    margin-top: #{$i}px
+
+body
+  padding-top: 0px
+  border-top: 3px solid $tgreen
+.small-line
+  line-height: 10px
+
+
+.tarif-table > thead > tr > th
+  vertical-align: middle
+  background-color: $tgreen
+  font-weight: 300
+  color: white  
+
+.tarif-table > tbody > tr:nth-child(2n+1) > td, 
+.tarif-table > tbody > tr:nth-child(2n+1) > th
+  background-color: $tgreen-lite
+
+.tarif-table > thead > tr > th:last-child,
+.tarif-table > tbody > tr > td:last-child,
+  padding-right: 20px
+
+.tarif-table > thead > tr > th:first-child,
+.tarif-table > tbody > tr > td:first-child,
+  padding-left: 20px
