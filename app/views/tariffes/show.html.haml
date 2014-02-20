@@ -26,20 +26,7 @@
           Оформить заявку
 
 .mb50.text-center
-  %h4 
-    Расчет ежемесячной суммы расходов по тарифу 
-    = @tariffe.title
-  %form.form-inline
-    .form-group
-      %input.form-control{:placeholder => "Количество платежек"}
-    .form-group
-      %input.form-control{:placeholder => "Сумма на хоз. нужды"}
-    .form-group
-      %button.btn.btn-success
-        Расчитать	
-
-
-
+  = render 'form'
 
 %h4 Другие тарифы банка
 %table.table.table-condensed.tarif-table

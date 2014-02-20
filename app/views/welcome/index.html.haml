@@ -1,4 +1,16 @@
-= render 'form'
+.row.mb30
+  .col-md-8
+    .mt30
+      = render 'form'
+  .col-md-4.text-right
+    %h1 
+      %i.size-26.fa.fa-briefcase 
+      Тарифы
+    %p.small.small-line на банковское обслуживание
+    %p.small-line 
+      в 
+      %strong Чебоксарах
+
 
 %table.table.table-condensed.tarif-table
   %thead
@@ -18,12 +30,12 @@
   %tbody
     - @tariffes.each do |t|
       - t = TariffeDecorator.new t
-      %tr{role: 'clickable', data: { url: tariffe_url(t)}}
+      %tr{role: 'clickable', data: { url: tariffe_url(t, { tariffe_calculator: params[:tariffe_calculator] })}}
         %td= t.bank.title
         %td= t.title
         %td.text-right= t.month_fee
         %td.text-right= t.invoice_fee
-        %td.text-right= t.cashing_fee        
+        %td.text-right= t.cashing_fee
         %td.text-right.bold= t.total
         //%td.text-right= t.pdf_link
         //%td.text-right
