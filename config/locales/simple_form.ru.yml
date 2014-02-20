@@ -10,7 +10,7 @@ ru:
       # html: '<abbr title="required">*</abbr>'
     include_blank:
       hotel:
-        hotel_kind_id: 'Любой' 
+        hotel_kind_id: 'Любой'
 
     error_notification:
       default_message: "Обнаружены ошибки, пожалуйста, взгляните на них"
@@ -25,6 +25,9 @@ ru:
       defaults:
         name: Название
         title: Название
+      tariffe_calculator:
+        amount_of_invoices: Количество платежек
+        household_fee: Сумма на хоз. нужды
     placeholders:
       defaults:
         title: Название

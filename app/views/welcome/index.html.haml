@@ -1,5 +1,16 @@
 %h1 Тарифы
 
+%div.well
+  %h3 Расчет ежемесячной суммы расходов
+  = simple_form_for @calculator, url: root_path, method: :get do |f|
+    = f.input :amount_of_invoices
+    = f.input :household_fee
+
+    = f.submit 'Расчитать'
+    - if @calculator.filled?
+      %span или
+      = link_to 'Сбросить', root_path
+
 %table.table.table-condensed
   %thead
     %tr
@@ -9,6 +20,9 @@
       %th Стоимость платежного поручения
       %th Процент за снятие на хознужды
       %th pdf
+      %th
+        = total_heading(@calculator)
+
   %tbody
     - @tariffes.each do |t|
       - t = TariffeDecorator.new t
@@ -19,3 +33,4 @@
         %td= t.invoice_fee
         %td= t.cashing_fee
         %td= t.pdf_link
+        %td= t.total

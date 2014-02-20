@@ -21,4 +21,8 @@ class TariffeDecorator < Draper::Decorator
     h.money source.cashing_fee
   end
 
+  def total
+    h.money source.total
+  end
+
 end
