@@ -1,0 +1,22 @@
+.row.mb30
+  .col-md-8
+    .mt30
+      %h4 Расчет ежемесячной суммы расходов
+      = simple_form_for @calculator, wrapper: :calc, url: root_path, method: :get, html: { class: 'form-inline' } do |f|
+        = f.input :amount_of_invoices, hint: 'количество штук', autofocus: :autofocus, required: true, placeholder: 'Количество платежек', input_html: { type: :number, min: 0, max: 1000, class: 'form-control' }
+        = f.input :household_fee,      hint: 'сумма в рублях', required: true, placeholder: 'Сумма на хоз.нужды',  input_html: { type: :number, min: 0, max: 100000000, class: 'form-control' }
+
+        = f.button :submit, value: 'Найти подходящий', class: 'btn-success'
+        - if @calculator.filled?
+          %span или
+          = link_to 'Сбросить', root_path
+
+  .col-md-4.text-right
+    %h1 
+      %i.size-26.fa.fa-briefcase 
+      Тарифы
+    %p.small.small-line на банковское обслуживание
+    %p.small-line 
+      в 
+      %strong Чебоксарах
+

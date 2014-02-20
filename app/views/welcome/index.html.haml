@@ -1,35 +1,4 @@
-.row.mb30
-  .col-md-8
-    .mt30
-      //%h3 Расчет ежемесячной суммы расходов
-      //= simple_form_for @calculator, url: root_path, method: :get do |f|
-      //  = f.input :amount_of_invoices
-      //  = f.input :household_fee
-      //
-      //  = f.submit 'Расчитать'
-      //  - if @calculator.filled?
-      //    %span или
-      //    = link_to 'Сбросить', root_path
-      
-      %h4 Расчет ежемесячной суммы расходов
-      %form.form-inline
-        .form-group
-          %input.form-control{:placeholder => "Количество платежек"}
-        .form-group
-          %input.form-control{:placeholder => "Сумма на хоз. нужды"}
-        .form-group
-          %button.btn.btn-success
-            Расчитать
-
-  .col-md-4.text-right
-    %h1 
-      %i.size-26.fa.fa-briefcase 
-      Тарифы
-    %p.small.small-line на банковское обслуживание
-    %p.small-line 
-      в 
-      %strong Чебоксарах
-
+= render 'form'
 
 %table.table.table-condensed.tarif-table
   %thead

@@ -2,15 +2,7 @@ class Tariffe::Calculator
   include ActiveModel::Model
   extend ActiveModel::Naming
 
-  attr_writer :amount_of_invoices, :household_fee, :sort_order
-
-  def amount_of_invoices
-    @amount_of_invoices || 0
-  end
-
-  def household_fee
-    @household_fee || 0.0
-  end
+  attr_accessor :amount_of_invoices, :household_fee, :sort_order
 
   def sort_order
     if %w(asc desc).include?(@sort_order)

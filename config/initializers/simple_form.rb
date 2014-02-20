@@ -43,7 +43,9 @@ SimpleForm.setup do |config|
     b.use :label_input
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
     b.use :error, wrap_with: { tag: :span, class: :error }
+
   end
+
 
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
@@ -111,7 +113,7 @@ SimpleForm.setup do |config|
   # in this configuration, which is recommended due to some quirks from different browsers.
   # To stop SimpleForm from generating the novalidate option, enabling the HTML5 validations,
   # change this configuration to true.
-  config.browser_validations = false
+  config.browser_validations = true
 
   # Collection of methods to detect if a file type was given.
   # config.file_methods = [ :mounted_as, :file?, :public_filename ]
@@ -139,4 +141,18 @@ SimpleForm.setup do |config|
 
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?
+  config.wrappers :calc, tag: 'div', class: 'form-group', error_class: 'error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.use :input
+    # Calculates min and max from length validations for numeric inputs
+    b.optional :min_max
+    b.use :error, wrap_with: { tag: 'span', class: 'help-inline' }
+    b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+    #binding.pry
+    #b.wrapper tag: 'div', class: 'controls' do |ba|
+    #end
+  end
+
 end
+
