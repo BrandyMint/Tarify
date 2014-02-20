@@ -9,22 +9,38 @@ body
   border-top: 3px solid $tgreen
 .small-line
   line-height: 10px
+a
+  color: $tblue
+a:hover  
+  color: $tblue-lite
 
 
 .tarif-table > thead > tr > th
   vertical-align: middle
-  background-color: $tgreen
-  font-weight: 300
-  color: white  
+  background-color: $tgrey
+  font-weight: 300  
+  color: white    
+  a
+    color: white
 
-.tarif-table > tbody > tr:nth-child(2n+1) > td, 
-.tarif-table > tbody > tr:nth-child(2n+1) > th
+.tarif-table > tbody > tr:nth-child(2n+1)
   background-color: $tgreen-lite
+
+.tarif-table > tbody > tr:hover
+  background-color: $tgreen2
+  color: white
 
 .tarif-table > thead > tr > th:last-child,
 .tarif-table > tbody > tr > td:last-child,
-  padding-right: 20px
+  padding-right: 10px
+  border-top-right-radius: 4px
 
 .tarif-table > thead > tr > th:first-child,
 .tarif-table > tbody > tr > td:first-child,
-  padding-left: 20px
+  padding-left: 10px
+  border-top-left-radius: 4px
+
+.footer
+  background-color: $tgreen
+  color: white
+  padding: 15px 0

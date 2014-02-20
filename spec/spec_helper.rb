@@ -59,18 +59,16 @@ Spork.prefork do
     config.order = "random"
 
     config.before(:suite) do
-      #DatabaseCleaner.strategy = :truncation, {
-        #:except => %w[]
-      #}
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
     end
+
     config.before(:each) do
       DatabaseCleaner.start
-      #Warden.test_reset! 
     end
+
     config.after(:each) do
       DatabaseCleaner.clean
-      #Hotel.tire.index.delete
-      #Hotel.tire.create_elasticsearch_index
     end
   end
 
