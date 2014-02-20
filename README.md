@@ -4,7 +4,6 @@
 ![travis build state](https://api.travis-ci.org/BrandyMint/Tarify.png)
 
 
-
 ```
 gem install
 rake db:create db:migrate
@@ -17,4 +16,3 @@ rake db:create db:migrate
 cap production shared:pull - скачать базу и uploads
 cap production shared:pull_uploads - скачать uploads
 ```
-
