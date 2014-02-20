@@ -1,8 +1,6 @@
 module ApplicationHelper
   def app_version
-    content_tag :small, :class => 'text-muted', :data => { :version => Tarify.version.to_s } do
-      link_to 'v' + Tarify.version.format( "%M.%m.%p" ), 'http://github.com/brandymint/tarify'
-    end
+    'v' + Tarify.version.format( "%M.%m.%p" )
   end
 
   def fee value
