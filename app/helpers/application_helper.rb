@@ -5,7 +5,6 @@ module ApplicationHelper
 
   def fee value
     return '&middot;'.html_safe unless value
-    value = 1.2
     precision = 2
     precision = 0 if value==value.to_i
     number_to_percentage value, precision: precision
