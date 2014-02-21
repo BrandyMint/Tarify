@@ -6,7 +6,7 @@ module TariffesHelper
       ''
     end
 
-    caption = raw("Ежемесячная сумма расходов #{arrow}")
+    caption = raw("Предполагаемая сумма расходов #{arrow}")
     link_to caption, root_path(params.deep_merge(calculator.params_order))
   end
 end

@@ -23,9 +23,7 @@
       %th.text-right Месячное обслуживание
       %th.text-right Стоимость платежного поручения
       %th.text-right Процент за снятие на хознужды
-      %th.text-right
-        = total_heading(@calculator)
-      //%th.text-right PDF
+      %th.text-right= total_heading(@calculator)
 
   %tbody
     - @tariffes.each do |t|
@@ -37,6 +35,3 @@
         %td.text-right= t.invoice_fee
         %td.text-right= t.cashing_fee
         %td.text-right.bold= t.total
-        //%td.text-right= t.pdf_link
-        //%td.text-right
-        //  %i.fa.fa-download

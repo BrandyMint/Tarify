@@ -15,7 +15,7 @@ module Concerns::Calculations
     def with_total_calculation(calculator)
       raise ArgumentError unless calculator.is_a?(Tariffe::Calculator)
 
-      sql = '(tariffes.month_fee + (%d * tariffes.invoice_fee) + (%f * tariffes.cashing_fee)) AS total, tariffes.*'
+      sql = '(tariffes.month_fee + (%d * tariffes.invoice_fee) + (%f * tariffes.cashing_fee/100)) AS total, tariffes.*'
       select(sql % [calculator.amount_of_invoices.to_i, calculator.household_fee.to_f])
         .reorder('total %s' % calculator.sort_order)
     end

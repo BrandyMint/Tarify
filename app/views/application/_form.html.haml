@@ -1,4 +1,4 @@
-%h4 Расчет ежемесячной суммы расходов
+%h4 Расчет предполагаемой суммы расходов
 = simple_form_for calculator, wrapper: :calc, url: url_for, method: :get, html: { class: 'form-inline' } do |f|
   = f.input :amount_of_invoices, hint: 'количество штук', autofocus: :autofocus, required: true, placeholder: 'Количество платежек', input_html: { type: :number, min: 0, max: 1000, class: 'form-control' }
   = f.input :household_fee,      hint: 'сумма в рублях', required: true, placeholder: 'Сумма на хоз.нужды',  input_html: { type: :number, min: 0, max: 100000000, class: 'form-control' }
@@ -7,3 +7,14 @@
   -#- if calculator.filled?
     -#%span или
     -#= link_to 'Сбросить', root_path
+
+%p
+  %span.label.label-warning Предполагаемая сумма расходов
+  \=
+  %span.label.label-primary Количество платежек
+  \*
+  %span.label.label-info Стоимость поручения
+  \+
+  %span.label.label-primary Сумма на хоз.нуждны
+  \*
+  %span.label.label-info Процент
