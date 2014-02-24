@@ -1,7 +1,7 @@
 module TariffesHelper
   def total_heading(calculator)
     arrow   = if calculator.filled?
-      calculator.asc? ? '&#9652;' : '&#9662;'
+      calculator.asc? ? '<i class="fa fa-angle-down"/>' : '<i class="fa fa-angle-up"/>'
     else
       ''
     end

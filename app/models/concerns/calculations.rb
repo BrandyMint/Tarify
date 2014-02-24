@@ -17,7 +17,7 @@ module Concerns::Calculations
 
       sql = '(tariffes.month_fee + (%d * tariffes.invoice_fee) + (%f * tariffes.cashing_fee/100)) AS total, tariffes.*'
       select(sql % [calculator.amount_of_invoices.to_i, calculator.household_fee.to_f])
-        .reorder('total %s' % calculator.sort_order)
+        .reorder('total %s  NULLS LAST' % calculator.sort_order)
     end
   end
 end

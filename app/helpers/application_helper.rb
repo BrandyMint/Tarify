@@ -3,6 +3,22 @@ module ApplicationHelper
     'v' + Tarify.version.format( "%M.%m.%p" )
   end
 
+  def amount_hint f
+    if f.object.amount_of_invoices.present?
+      'количество штук'
+    else
+      false
+    end
+  end
+
+  def fee_hint f
+    if f.object.household_fee.present?
+      'сумма в рублях'
+    else
+      false
+    end
+  end
+
   def fee value
     return '&middot;'.html_safe unless value
     precision = 2
