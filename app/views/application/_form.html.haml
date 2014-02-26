@@ -1,9 +1,14 @@
 %h4 Расчет предполагаемой суммы расходов
 = simple_form_for calculator, wrapper: :calc, url: url_for, method: :get, html: { class: 'form-inline' } do |f|
-  = f.input :amount_of_invoices, hint: amount_hint(f), autofocus: :autofocus, required: true, placeholder: 'Количество платежек', input_html: { type: :number, min: 0, max: 1000, class: 'form-control' }
-  = f.input :household_fee,      hint: fee_hint(f), required: true, placeholder: 'Сумма на хоз.нужды',  input_html: { type: :number, min: 0, max: 100000000, class: 'form-control' }
-
-  = f.button :submit, value: 'Найти подходящий', class: 'btn-success'
+  = f.input :amount_of_invoices, hint: amount_hint(f), autofocus: :autofocus, required: true, placeholder: 'Количество платежек', input_html: { type: :number, min: 0, max: 1000, class: 'form-control form-calc' }
+  *
+  %span.label.label-info.calc-label Стоимость поручения
+  %i.fa.fa-plus
+  = f.input :household_fee,      hint: fee_hint(f), required: true, placeholder: 'Сумма на хоз.нужды',  input_html: { type: :number, min: 0, max: 100000000, class: 'form-control form-calc' }
+  *
+  %span.label.label-primary Процент
+  \=
+  = f.button :submit, value: 'Найти подходящий', class: 'btn-success btn-calc'
   -#- if calculator.filled?
     -#%span или
     -#= link_to 'Сбросить', root_path

@@ -1,18 +1,27 @@
-.page-header
-  %h1= @tariffe.title
-  %small.pull-right
-    %a(href="/") 
-      %i.fa.fa-chevron-left
-      Вернутся к списку тарифов
-  %small= @tariffe.bank
-.row.mb30
-  .col-md-8.mt20	
-    = simple_format @tariffe.description
+.row
+  .col-sm-8
     .mt30
+      %h1= @tariffe.title
+      %small= @tariffe.bank
+  .col-sm-4.text-right
+    %a.site-name(href="/") 
+      %h1 
+        %i.size-26.fa.fa-briefcase 
+        Тарифы
+    %p.small.small-line на банковское обслуживание
+    %p.small-line 
+      в 
+      %strong Чебоксарах
+%hr
+
+.row.mb30
+  .col-xs-7.mt20	
+    = simple_format @tariffe.description
+    .mt30.mb30
       %a.size-18.lite(href="#")
         Скачать PDF
         %i.fa.fa-download    
-  .col-md-4
+  .col-xs-5
     %h4 Заявка на обслуживание тарифа
     %form
       .form-group
@@ -25,11 +34,13 @@
         %button.btn.btn-success
           Оформить заявку
 
-.mb50.text-center
+%%hr.mb50
+
+.mb50.text-left
   = render 'form'
 
 %h4 Другие тарифы банка
-%table.table.table-condensed.tarif-table
+%table.table.table-condensed.tarif-table.mb100
   %thead
     %tr
       %th 
@@ -61,4 +72,6 @@
       %td.text-right 400 руб.
       %td.text-right 400 руб.               
       
-
+.row.mb30
+  .col-sm-12.pull-right
+    Гедонизм, следовательно, подчеркивает смысл жизни, tertium nоn datur. Можно предположить, что знак категорически рефлектирует конфликт, tertium nоn datur. Ощущение мира подрывает дуализм, ломая рамки привычных представлений. <br><br>Вещь в себе подрывает трагический язык образов, учитывая опасность, которую представляли собой писания Дюринга для не окрепшего еще немецкого рабочего движения.

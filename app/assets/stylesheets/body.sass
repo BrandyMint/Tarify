@@ -1,10 +1,10 @@
-@each $i in 10, 20, 30, 40, 50
+@each $i in 10, 20, 30, 40, 50,100
   .mb#{$i}
     margin-bottom: #{$i}px
   .mt#{$i}
     margin-top: #{$i}px
-
-body
+  
+body  
   padding-top: 0px
   border-top: 3px solid $tgreen
 .small-line
@@ -13,6 +13,20 @@ a
   color: $tblue
 a:hover
   color: $tblue-lite
+a.site-name:hover
+  text-decoration: none
+
+.calc-label
+  display: inline-block
+  width: 75px
+  white-space: normal
+  vertical-align: middle
+.form-calc
+  height: 29px
+  font-size: 12px
+.btn-calc
+  padding: 5px 10px
+  font-size: 12px
 
 input[type=number]
-  width: 200px
+  width: 160px
