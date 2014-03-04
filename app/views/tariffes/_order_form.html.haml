@@ -1,0 +1,14 @@
+= simple_form_for @order, url: tariffes_url, html: {class: 'form-horizontal', role: 'order-form'} do |f|
+  = f.error_notification
+  = f.hidden_field :tariffe_id, value: @tariffe.id
+  .form-group
+    = f.input_field :name, placeholder: 'Ф.И.О.', required: false, role: 'name', class: 'form-control'
+    = f.error :name
+  .form-group
+    = f.input_field :phone, placeholder: 'Контактный телефон', required: false, class: 'masked_phone form-control', role: 'phone', maxlength: ""
+    = f.error :phone
+  .form-group
+    = f.input_field :email, placeholder: 'E-mail', required: false, class: 'form-control'
+    = f.error :email
+  .form-group
+    = f.button :submit, class: 'btn btn-success', value: 'Оформить заявку', data: {disable_with: 'Оформляю...'}, role: 'order_submit'

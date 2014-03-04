@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/BrandyMint/littlesms.git
+  revision: d32001e425a62763a6afc43716854418e14ff954
+  specs:
+    littlesms (0.0.1)
+
+GIT
   remote: git://github.com/Compass/compass-rails.git
   revision: 2fbc4a601d52622f698100bf45e41572fbb9fe3e
   branch: 2-0-stable
@@ -68,6 +74,12 @@ GIT
     simple_form (3.0.0.rc)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
+
+GIT
+  remote: git://github.com/pluginaweek/state_machine.git
+  revision: 8a3ba81801782ac4ef9d4ace1209d8d50ffccdb0
+  specs:
+    state_machine (1.2.0)
 
 GIT
   remote: git://github.com/rails/coffee-rails.git
@@ -206,6 +218,8 @@ GEM
     email_spec (1.5.0)
       launchy (~> 2.1)
       mail (~> 2.2)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -581,6 +595,7 @@ DEPENDENCIES
   database_cleaner
   draper
   email_spec (>= 1.2.1)
+  email_validator
   factory_girl_rails
   fakeredis
   foreman
@@ -604,6 +619,7 @@ DEPENDENCIES
   kaminari
   kaminari-bootstrap
   launchy (>= 2.1.2)
+  littlesms!
   mailcatcher
   meta_request
   pg
@@ -645,6 +661,7 @@ DEPENDENCIES
   simplecov
   simplecov-rcov
   sprockets-rails!
+  state_machine!
   turbolinks
   turn
   uglifier (~> 1.3)

@@ -1,0 +1,12 @@
+%h2
+  Новый заказ
+%p= link_to 'в админке', admin_order_url(@order)
+%p
+  %b На имя:
+  = @order.name
+%p
+  %b Тариф:
+  = @order.tariffe.title
+%p
+  %b Контактный телефон:
+  = @order.phone

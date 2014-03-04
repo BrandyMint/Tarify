@@ -1,0 +1,13 @@
+{
+  "name": "tarify",
+  "version": "0.1",
+  "dependencies": {
+    "jquery.role": "git://github.com/kossnocorp/role",
+    "jquery.maskedinput" : "latest"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
