@@ -3,13 +3,13 @@
     .mt30
       = render 'form'
   .col-sm-4.text-right
-    %a.site-name(href="/") 
-      %h1 
-        %i.size-26.fa.fa-briefcase 
+    %a.site-name(href="/")
+      %h1
+        %i.size-26.fa.fa-briefcase
         Тарифы
     %p.small.small-line на банковское обслуживание
-    %p.small-line 
-      в 
+    %p.small-line
+      в
       %strong Чебоксарах
 %hr
 
@@ -23,11 +23,11 @@
     %tr
       %th Банк
       %th Тариф
-      %th.text-right Месячное обслуживание
-      %th.text-right Стоимость платежного поручения
-      %th.text-right Процент за снятие на хознужды
+      %th.text-right= sortable_heading('month_fee')
+      %th.text-right= sortable_heading('invoice_fee')
+      %th.text-right= sortable_heading('cashing_fee')
       - if @calculator.filled?
-        %th.text-right= total_heading(@calculator)
+        %th.text-right= sortable_heading('total')
 
   %tbody
     - @tariffes.each do |t|
