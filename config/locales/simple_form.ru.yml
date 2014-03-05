@@ -27,7 +27,7 @@ ru:
         title: Название
       tariffe_calculator:
         amount_of_invoices: Количество платежек
-        household_fee: Сумма на хоз. нужды
+        household_fee: Снятие на хоз. нужды
     placeholders:
       defaults:
         title: Название

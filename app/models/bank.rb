@@ -5,7 +5,8 @@ class Bank < ActiveRecord::Base
 
   validates :title, presence: true, uniqueness: true
 
-  validates :notification_phone, length: {is: 10}
+  validates :notification_phone, length: {is: 10}, allow_blank: true
+  validates :notification_email, email: true, allow_blank: true
 
   def notification_phone= notification_phone
     super notification_phone[4,3].to_s + notification_phone[9,3].to_s + notification_phone[13,2].to_s + notification_phone[16,2].to_s

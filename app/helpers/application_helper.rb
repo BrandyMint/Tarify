@@ -5,7 +5,7 @@ module ApplicationHelper
 
   def amount_hint f
     if f.object.amount_of_invoices.present?
-      'количество штук'
+      'штук в месяц'
     else
       false
     end
@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def fee_hint f
     if f.object.household_fee.present?
-      'сумма в рублях'
+      'рублей в месяц'
     else
       false
     end
