@@ -17,26 +17,26 @@
   .col-sm-12.pull-right
     Согласно мнению известных философов, диалектика решительно рассматривается знак, отрицая очевидное. Веданта очевидна не для всех. Локаята выводит естественный гравитационный парадокс, отрицая очевидное. Заблуждение, следовательно, оспособляет неоднозначный знак, хотя в официозе принято обратное.
 
-
-%table.table.table-condensed.tarif-table
-  %thead
-    %tr
-      %th= sortable_heading('bank_id')
-      %th= sortable_heading('title')
-      %th.text-right= sortable_heading('month_fee')
-      %th.text-right= sortable_heading('invoice_fee')
-      %th.text-right= sortable_heading('cashing_fee')
-      - if @calculator.filled?
-        %th.text-right= sortable_heading('total')
-
-  %tbody
-    - @tariffes.each do |t|
-      - t = TariffeDecorator.new t
-      %tr{role: 'clickable', data: { url: tariffe_url(t, { tariffe_calculator: params[:tariffe_calculator] })}}
-        %td= t.bank.title
-        %td= t.title
-        %td.text-right= t.month_fee
-        %td.text-right= t.invoice_fee
-        %td.text-right= t.cashing_fee
+- if @tariffes.present?
+  %table.table.table-condensed.tarif-table
+    %thead
+      %tr
+        %th= sortable_heading('bank_id')
+        %th= sortable_heading('title')
+        %th.text-right= sortable_heading('month_fee')
+        %th.text-right= sortable_heading('invoice_fee')
+        %th.text-right= sortable_heading('cashing_fee')
         - if @calculator.filled?
-          %td.text-right.bold= t.total
+          %th.text-right= sortable_heading('total')
+
+    %tbody
+      - @tariffes.each do |t|
+        - t = TariffeDecorator.new t
+        %tr{role: 'clickable', data: { url: tariffe_url(t, { tariffe_calculator: params[:tariffe_calculator] })}}
+          %td= t.bank.title
+          %td= t.title
+          %td.text-right= t.month_fee
+          %td.text-right= t.invoice_fee
+          %td.text-right= t.cashing_fee
+          - if @calculator.filled?
+            %td.text-right.bold= t.total

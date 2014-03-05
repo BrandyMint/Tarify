@@ -1,8 +1,8 @@
 !!!
 %html
   %head
-    -# %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}    
-    %meta{:name => "viewport", :content => "width=768"}    
+    -# %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %meta{:name => "viewport", :content => "width=768"}
     %title= content_for?(:title) ? yield(:title) : Settings.app.title
     %meta{:content => content_for?(:description) ? yield(:description) : Settings.app.title, :name => "description"}
     = stylesheet_link_tag :application, :media => "all"
@@ -18,12 +18,12 @@
             .col-md-12
               = render 'layouts/messages'
               = yield
-      %footer.footer
-        .container
-          %small.pull-left
-            Тарифы на банковское обслуживание в Чебоксарах
-            = app_version
-          %small.pull-right
-            2014
-            %i.glyphicon.glyphicon-copyright-mark
-            = link_to 'BrandyMint', 'http://brandymint.ru'
+    %footer.footer
+      .container
+        %small.pull-left
+          Тарифы на банковское обслуживание в Чебоксарах
+          = app_version
+        %small.pull-right
+          2014
+          %i.glyphicon.glyphicon-copyright-mark
+          = link_to 'BrandyMint', 'http://brandymint.ru'
