@@ -21,8 +21,8 @@
 %table.table.table-condensed.tarif-table
   %thead
     %tr
-      %th Банк
-      %th Тариф
+      %th= sortable_heading('bank_id')
+      %th= sortable_heading('title')
       %th.text-right= sortable_heading('month_fee')
       %th.text-right= sortable_heading('invoice_fee')
       %th.text-right= sortable_heading('cashing_fee')

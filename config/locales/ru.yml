@@ -30,6 +30,8 @@ ru:
         intersection: Период пересекается с другим (id = %{id})
     attributes:
       tariffe:
+        bank_id: Банк
+        title: Тариф
         month_fee: Месячное обслуживание
         invoice_fee: Стоимость платежного поручения
         cashing_fee: Процент за снятие на хознужды

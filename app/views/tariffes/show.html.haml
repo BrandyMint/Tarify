@@ -27,41 +27,32 @@
 
 %hr.mb50
 
-.mb50.text-left
-  = render 'form'
+- if @other_tariffes.present?
+  .mb50.text-left
+    = render 'form'
 
-%h4 Другие тарифы банка
-%table.table.table-condensed.tarif-table.mb100
-  %thead
-    %tr
-      %th
-        Тариф
-        %i.fa.fa-angle-down
-      %th.text-right Месячное обслуживание
-      %th.text-right Стоимость платежного поручения
-      %th.text-right Процент за снятие на хознужды
+  %h4 Другие тарифы банка
 
-  %tbody
-    %tr
-      %td Название тарифа1
-      %td.text-right 100 руб.
-      %td.text-right 100 руб.
-      %td.text-right 100 руб.
-    %tr
-      %td Название тарифа2
-      %td.text-right 200 руб.
-      %td.text-right 200 руб.
-      %td.text-right 200 руб.
-    %tr
-      %td Название тарифа3
-      %td.text-right 300 руб.
-      %td.text-right 300 руб.
-      %td.text-right 300 руб.
-    %tr
-      %td Название тарифа4
-      %td.text-right 400 руб.
-      %td.text-right 400 руб.
-      %td.text-right 400 руб.
+  %table.table.table-condensed.tarif-table.mb100
+    %thead
+      %tr
+        %th= sortable_heading('title')
+        %th.text-right= sortable_heading('month_fee')
+        %th.text-right= sortable_heading('invoice_fee')
+        %th.text-right= sortable_heading('cashing_fee')
+        - if @calculator.filled?
+          %th.text-right= sortable_heading('total')
+
+    %tbody
+      - @other_tariffes.each do |t|
+        - t = TariffeDecorator.new t
+        %tr{role: 'clickable', data: { url: tariffe_url(t, { tariffe_calculator: params[:tariffe_calculator] })}}
+          %td= t.title
+          %td.text-right= t.month_fee
+          %td.text-right= t.invoice_fee
+          %td.text-right= t.cashing_fee
+          - if @calculator.filled?
+            %td.text-right.bold= t.total
 
 .row.mb30
   .col-sm-12.pull-right
