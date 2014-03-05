@@ -7,7 +7,7 @@ describe Tariffe do
     describe '.with_total_calculation' do
       it do
         FactoryGirl.create(:tariffe)
-        expect(Tariffe.with_total_calculation(calculator).first.total).to eq(1290.0)
+        expect(Tariffe.with_total_calculation(calculator).first.total).to eq(1092.0)
       end
     end
   end
