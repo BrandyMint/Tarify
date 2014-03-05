@@ -21,9 +21,10 @@ gem 'authority'
 # gem 'phony_rails', :git => 'git://github.com/joost/phony_rails.git'
 gem 'active_attr'
 gem 'validates'
+gem 'email_validator'
 gem 'hashie'
 # берется последняя версия для совместимости с rails 4
-# gem 'state_machine', :git => 'git://github.com/pluginaweek/state_machine.git'
+gem 'state_machine', :git => 'git://github.com/pluginaweek/state_machine.git'
 # gem 'simple_enum'
 # gem 'enumerize'
 
@@ -112,6 +113,8 @@ gem 'uglifier', '~> 1.3'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', github: 'rails/coffee-rails'
+
+gem 'littlesms', git: 'git://github.com/BrandyMint/littlesms.git'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -220,15 +223,15 @@ group :test do
   gem 'guard-bundler'
   gem 'guard-cucumber'
   gem 'guard-ctags-bundler'
-  
+
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
-  
+
   gem "database_cleaner"
   gem "capybara"
   gem 'capybara-screenshot'
   gem 'poltergeist'
-  
+
   gem "launchy", ">= 2.1.2"
   gem 'turn', :require => false
   #gem "test_active_admin", :git => "git://github.com/BrandyMint/test_active_admin.git"

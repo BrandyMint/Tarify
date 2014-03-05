@@ -4,37 +4,28 @@
       %h1= @tariffe.title
       %small= @tariffe.bank
   .col-sm-4.text-right
-    %a.site-name(href="/") 
-      %h1 
-        %i.size-26.fa.fa-briefcase 
+    %a.site-name(href="/")
+      %h1
+        %i.size-26.fa.fa-briefcase
         Тарифы
     %p.small.small-line на банковское обслуживание
-    %p.small-line 
-      в 
+    %p.small-line
+      в
       %strong Чебоксарах
 %hr
 
 .row.mb30
-  .col-xs-7.mt20	
+  .col-xs-7.mt20
     = simple_format @tariffe.description
     .mt30.mb30
       %a.size-18.lite(href="#")
         Скачать PDF
-        %i.fa.fa-download    
+        %i.fa.fa-download
   .col-xs-5
     %h4 Заявка на обслуживание тарифа
-    %form
-      .form-group
-        %input.form-control{:placeholder => "Ф.И.О."}
-      .form-group
-        %input.form-control{:placeholder => "Контактный телефон"}
-      .form-group
-        %input.form-control{:placeholder => "E-mail"}
-      .form-group
-        %button.btn.btn-success
-          Оформить заявку
+    = render 'order_form'
 
-%%hr.mb50
+%hr.mb50
 
 .mb50.text-left
   = render 'form'
@@ -43,12 +34,12 @@
 %table.table.table-condensed.tarif-table.mb100
   %thead
     %tr
-      %th 
+      %th
         Тариф
-        %i.fa.fa-angle-down         
+        %i.fa.fa-angle-down
       %th.text-right Месячное обслуживание
       %th.text-right Стоимость платежного поручения
-      %th.text-right Процент за снятие на хознужды      
+      %th.text-right Процент за снятие на хознужды
 
   %tbody
     %tr
@@ -57,21 +48,21 @@
       %td.text-right 100 руб.
       %td.text-right 100 руб.
     %tr
-      %td Название тарифа2  
+      %td Название тарифа2
       %td.text-right 200 руб.
       %td.text-right 200 руб.
       %td.text-right 200 руб.
     %tr
-      %td Название тарифа3  
+      %td Название тарифа3
       %td.text-right 300 руб.
       %td.text-right 300 руб.
       %td.text-right 300 руб.
     %tr
-      %td Название тарифа4    
+      %td Название тарифа4
       %td.text-right 400 руб.
       %td.text-right 400 руб.
-      %td.text-right 400 руб.               
-      
+      %td.text-right 400 руб.
+
 .row.mb30
   .col-sm-12.pull-right
     Гедонизм, следовательно, подчеркивает смысл жизни, tertium nоn datur. Можно предположить, что знак категорически рефлектирует конфликт, tertium nоn datur. Ощущение мира подрывает дуализм, ломая рамки привычных представлений. <br><br>Вещь в себе подрывает трагический язык образов, учитывая опасность, которую представляли собой писания Дюринга для не окрепшего еще немецкого рабочего движения.

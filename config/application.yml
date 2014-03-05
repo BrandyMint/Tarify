@@ -1,4 +1,5 @@
 defaults: &defaults
+  sms_phone: ""
   app:
     title: Тарифы
 

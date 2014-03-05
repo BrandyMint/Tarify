@@ -4,6 +4,7 @@
 #= require jquery.role
 #= require turbolinks
 #= require bootstrap
+#= require jquery.maskedinput/jquery.maskedinput.min
 #= require_tree .
 
 # require jquery.freetile
@@ -16,8 +17,10 @@
 # sass-ный jquery
 # require jquery.ui.all
 
+
 $ ->
   $('.tooltip').tooltip()
+  $('.masked_phone').mask("+7 (999) 999-99-99")
   # $('#freetile').freetile()
   # $('input.ui-date-picker').datepicker()
   # $('input.ui-datetime-picker').datetimepicker()

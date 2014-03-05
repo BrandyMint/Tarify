@@ -5,7 +5,8 @@ Tarify::Application.routes.draw do
 
   root 'welcome#index'
 
-  resources :tariffes, only: [:show]
+  resources :orders, only: [:show]
+  resources :tariffes, only: [:show, :create]
 
 
   # Example of regular route:
