@@ -1,12 +1,21 @@
 module TariffesHelper
-  def total_heading(calculator)
-    arrow   = if calculator.filled?
-      calculator.asc? ? '<i class="fa fa-angle-down"/>' : '<i class="fa fa-angle-up"/>'
+  def sortable_heading(attribute)
+    arrow   = if @calculator.filled?
+      if params[:tariffe_calculator][:sort_field] == attribute || params[:tariffe_calculator][:sort_field].blank? && attribute == 'total'
+        @calculator.asc? ? '<i class="fa fa-angle-up"/>' : '<i class="fa fa-angle-down"/>'
+      else
+        ''
+      end
     else
       ''
     end
 
-    caption = raw("Предполагаемая сумма расходов #{arrow}")
-    link_to caption, root_path(params.deep_merge(calculator.params_order))
+    if @calculator.filled?
+      caption = raw("#{Tariffe.human_attribute_name(attribute)} #{arrow}")
+      @calculator.sort_field = attribute
+      link_to caption, root_path(params.deep_merge(@calculator.params_order))
+    else
+      Tariffe.human_attribute_name(attribute)
+    end
   end
 end

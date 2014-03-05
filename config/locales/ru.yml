@@ -28,6 +28,12 @@ ru:
         record_invalid: Испорченная запись
         invalid_range: Дата окончания периода должна быть больше даты начала
         intersection: Период пересекается с другим (id = %{id})
+    attributes:
+      tariffe:
+        month_fee: Месячное обслуживание
+        invoice_fee: Стоимость платежного поручения
+        cashing_fee: Процент за снятие на хознужды
+        total: Предполагаемая сумма расходов
   form_objects:
     errors:
       messages:
