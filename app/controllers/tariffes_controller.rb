@@ -1,7 +1,9 @@
 class TariffesController < ApplicationController
   def show
     @order ||= Order.new order_params
-    @tariffe ||= decorate_tariffe params[:id]
+    @tariffe ||= Tariffe.find(params[:id]).decorate
+    @other_tariffes = @tariffe.siblings.with_total_calculation(calculator)
+    render 'show'
   end
 
   def create
@@ -11,8 +13,8 @@ class TariffesController < ApplicationController
       NotificationService.new.new_order(@order)
       redirect_to order_path(@order)
     else
-      @tariffe = decorate_tariffe @order.tariffe_id
-      render 'show'
+      @tariffe = @order.tariffe.decorate
+      show
     end
   end
 
@@ -20,9 +22,5 @@ class TariffesController < ApplicationController
 
   def order_params
     params.fetch(:order, {}).permit!
-  end
-
-  def decorate_tariffe id
-    Tariffe.find(id).decorate
   end
 end

@@ -13,4 +13,8 @@ class Tariffe < ActiveRecord::Base
   def to_s
     title
   end
+
+  def siblings
+    self.class.active.ordered.where(bank: bank).where.not(id: id)
+  end
 end

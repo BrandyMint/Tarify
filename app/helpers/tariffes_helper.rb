@@ -13,7 +13,7 @@ module TariffesHelper
     if @calculator.filled?
       caption = raw("#{Tariffe.human_attribute_name(attribute)} #{arrow}")
       @calculator.sort_field = attribute
-      link_to caption, root_path(params.deep_merge(@calculator.params_order))
+      link_to caption, current_url(params.deep_merge(@calculator.params_order))
     else
       Tariffe.human_attribute_name(attribute)
     end
