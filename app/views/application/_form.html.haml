@@ -1,25 +1,36 @@
-%h4 Расчет предполагаемой суммы расходов
-= simple_form_for calculator, wrapper: :calc, url: url_for, method: :get, html: { class: 'form-inline' } do |f|
-  = f.input :amount_of_invoices, hint: amount_hint(f), autofocus: :autofocus, required: true, placeholder: 'Количество платежек', input_html: { type: :number, min: 0, max: 1000, class: 'form-control form-calc' }
-  *
-  %span.label.label-info.calc-label Стоимость поручения
-  %i.fa.fa-plus
-  = f.input :household_fee,      hint: fee_hint(f), required: true, placeholder: 'Сумма на хоз.нужды',  input_html: { type: :number, min: 0, max: 100000000, class: 'form-control form-calc' }
-  *
-  %span.label.label-primary Процент
-  \=
-  = f.button :submit, value: 'Найти подходящий', class: 'btn-success btn-calc'
-  -#- if calculator.filled?
-    -#%span или
-    -#= link_to 'Сбросить', root_path
+- if params[:tariffe_calculator].present?
+  - btn_state = ''
+  - collapse_state = 'in'
+- else
+  - btn_state = 'collapsed'
+  - collapse_state = ''
+.panel.panel-default
+  .panel-heading
+    .panel-title
+      %a{href: "#calculator-form", class: btn_state, data: {toggle: "collapse"}} Подобрать тариф
+  = simple_form_for calculator, wrapper: :calc, url: url_for, method: :get, html: { class: "form-inline panel-collapse collapse #{collapse_state}", id: 'calculator-form' } do |f|
+    .panel-body
+      %h4 Расчет предполагаемой суммы расходов
+      = f.input :amount_of_invoices, hint: amount_hint(f), autofocus: :autofocus, required: true, placeholder: 'Количество платежек', input_html: { type: :number, min: 0, max: 1000, class: 'form-control form-calc' }
+      *
+      %span.label.label-info.calc-label Стоимость поручения
+      %i.fa.fa-plus
+      = f.input :household_fee,      hint: fee_hint(f), required: true, placeholder: 'Сумма на хоз.нужды',  input_html: { type: :number, min: 0, max: 100000000, class: 'form-control form-calc' }
+      *
+      %span.label.label-primary Процент
+      \=
+      = f.button :submit, value: 'Найти подходящий', class: 'btn-success btn-calc'
+      -#- if calculator.filled?
+        -#%span или
+        -#= link_to 'Сбросить', root_path
 
--#%p
-  -#%span.label.label-warning Предполагаемая сумма расходов
-  -#\=
-  -#%span.label.label-primary Количество платежек
-  -#\*
-  -#%span.label.label-info Стоимость поручения
-  -#\+
-  -#%span.label.label-primary Снятие на хоз.нуждны
-  -#\*
-  -#%span.label.label-info Процент
+    -#%p
+      -#%span.label.label-warning Предполагаемая сумма расходов
+      -#\=
+      -#%span.label.label-primary Количество платежек
+      -#\*
+      -#%span.label.label-info Стоимость поручения
+      -#\+
+      -#%span.label.label-primary Снятие на хоз.нуждны
+      -#\*
+      -#%span.label.label-info Процент
