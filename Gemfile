@@ -41,7 +41,7 @@ gem 'role-rails'
 # Почта
 gem 'recipient_interceptor'
 
-#gem 'mini_magick'
+gem 'mini_magick'
 gem 'carrierwave'
 
 # Контроллеры

@@ -1,6 +1,8 @@
 class Bank < ActiveRecord::Base
   scope :active, -> { where active: true }
 
+  belongs_to :preview, class_name: 'Image'
+  has_many :images, as: :resource, dependent: :destroy
   has_many :tariffes
 
   validates :title, presence: true, uniqueness: true
