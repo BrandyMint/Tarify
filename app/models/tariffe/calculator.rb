@@ -13,7 +13,7 @@ class Tariffe::Calculator
   end
 
   def sort_field
-    Tariffe.attribute_names.include?(@sort_field) ? @sort_field : 'total'
+    Tariffe.attribute_names.include?(@sort_field) ? @sort_field : 'bank_id'
   end
 
   def reverse_order
