@@ -8,12 +8,17 @@ module TariffesHelper
       end
     end
 
-    # if @calculator.filled?
-    # else
-    #   Tariffe.human_attribute_name(attribute)
-    # end
     caption = raw("#{Tariffe.human_attribute_name(attribute)} #{arrow}")
     @calculator.sort_field = attribute
     link_to caption, current_url(params.deep_merge(@calculator.params_order))
+  end
+
+  def params_list *params
+    str = '<table class="table">'
+    params.each do |p|
+      str << "<tr><td><b>#{Tariffe.human_attribute_name(p)}</b></td><td>#{@tariffe.send(p)}</td></tr>"
+    end
+    str << '</table>'
+    str.html_safe
   end
 end

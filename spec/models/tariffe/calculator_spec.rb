@@ -7,10 +7,10 @@ describe Tariffe::Calculator do
     # it { expect(subject.amount_of_invoices).to eq(0) }
     # it { expect(subject.household_fee).to eq(0.0) }
     it { expect(subject.sort_order).to eq('asc') }
-    it { expect(subject.sort_field).to eq('total') }
+    it { expect(subject.sort_field).to eq('bank_id') }
     it { expect(subject.reverse_order).to eq('desc') }
     it { expect(subject.asc?).to be_true }
-    it { expect(subject.params_order).to eq({ tariffe_calculator: { sort_order: 'desc', sort_field: 'total' } }.with_indifferent_access) }
+    it { expect(subject.params_order).to eq({ tariffe_calculator: { sort_order: 'desc', sort_field: 'bank_id' } }.with_indifferent_access) }
     it { expect(subject.filled?).to be_false }
   end
 

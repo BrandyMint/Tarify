@@ -8,6 +8,7 @@
 
 .row.mb30
   .col-xs-7.mt20
+    = params_list :month_fee, :invoice_fee, :cashing_fee
     = simple_format @tariffe.summary
     .mt30.mb30
       %a.size-18.lite(href="#")
